@@ -1,0 +1,20 @@
+import { configureStore } from "@reduxjs/toolkit";
+import inputReducer from "./inputSlice";
+import isFindSlice from "./isFindSlice";
+import booksDataSlice from "./booksDataSlice";
+import sortSlice from "./sortSlice";
+import isLoadSlice from "./idLoadSlice";
+
+const store = configureStore({
+    reducer: {
+        input: inputReducer,
+        find: isFindSlice,
+        books: booksDataSlice,
+        sort: sortSlice,
+        load: isLoadSlice
+    },
+});
+
+export default store;
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
