@@ -1,17 +1,25 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import store from "./store/store";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
+import store from "./store/store";
+import IndexPage from "./components/IndexPage";
+import LibraryPage from "./components/LibraryPage";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <IndexPage />,
+            errorElement: <ErrorPage />,
+        },
+        {
+            path: "/library",
+            element: <LibraryPage />,
+        },
+    ]);
     return (
         <Provider store={store}>
-            <div className="flex flex-col h-screen justify-between m-10">
-                <Header />
-                <Main />
-                <Footer />
-            </div>
+            <RouterProvider router={router} />
         </Provider>
     );
 }
