@@ -6,7 +6,7 @@ const Main = () => {
     const find = useAppSelector(state => state.find.value);
 
     return (
-        <div className="mb-auto flex-grow my-10">
+        <div className="my-10">
             {find
                 ?
                 <div className="mb-10 space-y-5 columns-1 md:columns-2 xl:columns-3 justify-center xl:justify-between">
