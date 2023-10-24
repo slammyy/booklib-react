@@ -1,6 +1,6 @@
-import Header from "./Header";
-import BookCard from "./BookCard";
-import Footer from "./Footer";
+import Header from "../components/Header";
+import BookCard from "../components/BookCard";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../store/hooks";
 

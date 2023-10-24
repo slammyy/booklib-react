@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
-import IndexPage from "./components/IndexPage";
-import LibraryPage from "./components/LibraryPage";
-import ErrorPage from "./components/ErrorPage";
+import IndexPage from "./pages/IndexPage";
+import ErrorPage from "./pages/ErrorPage";
+import LibraryPage from "./pages/LibraryPage";
 
 function App() {
     const router = createBrowserRouter([
