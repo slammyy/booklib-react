@@ -11,12 +11,7 @@
 - Search for books using google books api
 - Filter books (relevance/newest)
 
----
-
-![image](https://github.com/slammyy/booklib-react/assets/45821857/7163231b-cae0-4d51-bc41-db05d6a48a62)
-![image](https://github.com/slammyy/booklib-react/assets/45821857/9702e74c-7c05-4273-8627-07109712399b)
-
----
+<img width="1392" alt="BookLib" src="https://github.com/slammyy/booklib-react/assets/45821857/92871179-8c42-44db-b012-31dd9655982e">
 
 ## Local launch
 1. Clone the repo
