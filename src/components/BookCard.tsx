@@ -1,25 +1,32 @@
-import { useAppSelector } from "../store/hooks";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import addIcon from "../assets/addIcon.svg";
+import { Link } from "react-router-dom";
+import { book, status } from "../store/bookDataSlice";
 
 const BookCard = () => {
     const booksData = useAppSelector(state => state.books.value);
+    const dispatch = useAppDispatch();
+    const findBook = async (bookId: string) => {
+        dispatch(status(false));
+        const res = await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}?key=${import.meta.env.VITE_BOOKSAPI}`);
+        const data = await res.json();
+        dispatch(book(await data));
+        dispatch(status(true));
+    };
     return (
         <>
             {
                 booksData.map((book: any, index: number) => {
                     if (book.volumeInfo.imageLinks && book.volumeInfo.categories && book.volumeInfo.title && book.volumeInfo.authors) {
                         return (
-                            <div key={index} className="h-fit w-96 md:w-auto bg-stone-200 flex items-center p-5 rounded-md gap-5 mb-5 drop-shadow-lg">
-                                <div className="absolute right-5 top-5 cursor-pointer">
-                                    <img src={addIcon} className="w-5 h-5 opacity-50"/>
+                            <Link to={`/books/${book.id}`} onClick={() => findBook(book.id)} key={index} className="h-36 px-5 flex items-center gap-5">
+                                <img className="rounded-md drop-shadow-lg h-20" src={book.volumeInfo.imageLinks.thumbnail} />
+                                <div className="text-left w-full pr-20">
+                                    <p className="text-stone-500 truncate">{book.volumeInfo.categories}</p>
+                                    <p className="text-lg text-stone-700 truncate">{book.volumeInfo.title}</p>
+                                    <p className="text-stone-500 truncate">{book.volumeInfo.authors[0]}</p>
                                 </div>
-                                <img className="rounded-md drop-shadow-lg" src={book.volumeInfo.imageLinks.thumbnail} />
-                                <div>
-                                    <p className="text-stone-500">{book.volumeInfo.categories}</p>
-                                    <p className="text-lg text-stone-700">{book.volumeInfo.title}</p>
-                                    <p className="text-stone-500">{book.volumeInfo.authors}</p>
-                                </div>
-                            </div>
+                            </Link>
                         );
                     }
                 })

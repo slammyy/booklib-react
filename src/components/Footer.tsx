@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return (
-        <footer className="w-full py-5 bg-white rounded-t-xl flex items-center justify-between px-10">
-            <div className="flex gap-10">
-                <a href="#" className="text-stone-700">About</a>
-                <a href="#" className="text-stone-700">Support</a>
-                <a href="#" className="text-stone-700">Contact</a>
-            </div>
-            <a href="#" className="text-stone-700 opacity-50">© 2023 Copyright: BookLib.com️</a>
-        </footer>
+            <footer className="bottom-0 w-full border-stone-300 border-t flex">
+                <Link to={"/"} className="p-4 border-stone-300 border-r w-1/2 flex justify-center items-center">
+                    <p className="text-stone-600 text-xl">Browse</p>
+                </Link>
+                <Link to={"/library"} className="p-4 w-1/2 flex justify-center items-center">
+                    <p className="text-stone-600 text-xl">Library</p>
+                </Link>
+            </footer>
     );
 };
 
