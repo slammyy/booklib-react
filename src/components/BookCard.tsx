@@ -1,5 +1,4 @@
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import addIcon from "../assets/addIcon.svg";
 import { Link } from "react-router-dom";
 import { book, status } from "../store/bookDataSlice";
 
