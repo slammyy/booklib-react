@@ -1,9 +1,6 @@
 const LibraryPage = () => {
-    const book = JSON.parse(localStorage.getItem("1"));
-    const title = book.volumeInfo.title;
-
     return (
-        <h1>{title}</h1>
+        <h1>Work in progress</h1>
     );
 };
 
