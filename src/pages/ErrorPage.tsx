@@ -1,8 +1,12 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 
 const ErrorPage = () => {
-    const error = useRouteError();
+    const error = useRouteError() as Error;
     console.error(error);
+
+    if (!isRouteErrorResponse(error)) {
+        return null;
+    }
 
     return (
         <div className="flex flex-col sm:flex-row items-center justify-center mt-20 sm:gap-4">
