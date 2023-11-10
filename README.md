@@ -1,5 +1,7 @@
 # BookLib: web-app for managing personal book library
 
+### Preview: https://booklib-react-five.vercel.app
+
 ### Tech stack:
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
